@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,600;1,700&display=swap');
+ 
+:root {
+    --warna-1: #00ae86;
+    --warna-2: #ccefe7;
+    --warna-3: #fff;
+    --warna-4: #6b7281;
+    --warna-5: #000000;
+    --warna-6: #f9fafc;
+  }
+
+
+body{
+    /* background: var(--warna-2); */
+    font-family: "Poppins", sans-serif;
+    
+ 
+}
+
+
+
+.navbar-nav .nav-link {
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+.navbar-nav .nav-link:hover {
+    color: #fff; 
+    background-color: #00ae86; 
+    border-radius: 5px; 
+}
+
+/* Dropdown menu item hover effect */
+.navbar-nav .dropdown-menu .dropdown-item:hover {
+    color: #fff; 
+    background-color: #00ae86; 
+}
+
+.activenavbar{
+    color: #00ae86;
+}
+
+
+
+
+
+
+/* dropdown */
+.dropdown-menu {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; 
+    overflow: hidden; 
+    padding: 0; 
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  .dropdown-item {
+    color: #333;
+    padding: 10px 20px; 
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  }
+
+  .dropdown-item:hover, .dropdown-item:focus {
+    background-color: #00ae86;
+    color: #ffffff;
+  }
+
+  .dropdown-item:not(:last-child) {
+    border-bottom: 1px solid #ddd; 
+  }
+
+  .dropdown-toggle::after {
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .dropdown-toggle[aria-expanded="true"]::after {
+    transform: rotate(180deg);
+  }
+
+/* card */
+
+
+.custom-shadow {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.taglinne {
+    background-color: #ccefe7;
+}
+
+.form{
+
+    position: relative;
+}
+
+.form .fa-search{
+
+    position: absolute;
+    top:17px;
+    left: 20px;
+    font-weight: bold;
+
+}
+
+
+.form-input{
+
+    height: 45px;
+    text-indent: 33px;
+}
+
+.form-input:focus{
+
+    box-shadow: none;
+    border:none;
+}
+
+
+.tombolhijau{
+   background-color: #00ae86;
+    color: #fff;
+}
+
+/* section news */
+
+
+.aksi-selanjutnya{
+    color: #00ae86;
+    font-weight: 600;
+}
+.logo{
+    background-color: #00ae86;
+    color: #fff;
+    top: -40px;
+}
+
+
+
+
+
+
+
+.bghijau{
+    background-color: #ccefe7;
+}
+
+/* footer */
+
+.icon-container {
+    cursor: pointer;
+    color: #fff;
+    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none; 
+}
+.icon-container:hover {
+    background-color: #e0e0e0;
+    color: #000; 
+}
+
+
+.ikutikami{
+   
+    background-color: #00ae86;
+}
+
+/* Atur ukuran gambar logo pada tampilan default */
+
+  
+  /* Atur ukuran gambar logo pada tampilan tablet */
+  @media (max-width: 768px) {
+   
+  }
+  
+  /* Atur ukuran gambar logo pada tampilan mobile */
+  @media (max-width: 576px) {
+    
+  }
+
+
+
