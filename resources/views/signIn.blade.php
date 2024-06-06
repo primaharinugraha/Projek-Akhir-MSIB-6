@@ -9,7 +9,8 @@
 <div class="signin">
     <div class="container-fluid py-4 bghijau mt-5">
         <div class="container d-flex justify-content-center align-items-center">
-            <form class="w-75">
+            <form  action="{{ route('login') }}" method="POST" class="w-75">
+                @csrf
                 <h2 class="mb-4 text-center mt-5">Sign In</h2>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email address</label>
