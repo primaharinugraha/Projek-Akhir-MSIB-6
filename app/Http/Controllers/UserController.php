@@ -16,4 +16,7 @@ class UserController extends Controller
     public function signup() {
         return view('signup');
     }
+    public function profile(){
+        return view('profile');
+    }
 }

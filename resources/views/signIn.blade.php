@@ -5,7 +5,7 @@
 {{-- navbar --}}
 @include('components.navbar')
 
-{{-- content --}}
+@section('content')
 <div class="signin">
     <div class="container-fluid py-4 bghijau mt-5">
         <div class="container d-flex justify-content-center align-items-center">
@@ -50,3 +50,5 @@
         });
     });
 </script>
+@endsection
+

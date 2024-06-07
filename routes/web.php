@@ -21,3 +21,4 @@ Route::get('/', function () {
 Route::get('Signin', [UserController::class, 'index'])->name('user.signin');
 Route::get('home', [UserController::class, 'home'])->name('user.home');
 Route::get('signup', [UserController::class, 'signup'])->name('user.signup');
+Route::get('profile', [UserController::class, 'profile'])->name('user.profile');
