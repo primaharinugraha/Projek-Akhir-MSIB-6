@@ -20,7 +20,7 @@ Route::get('/', function () {
     return view('landingpage');
 });
 
-Route::get('Signin', [UserController::class, 'index'])->name('user.signin');
+Route::get('login', [UserController::class, 'indexlogin'])->name('user.indexlogin');
 Route::get('home', [UserController::class, 'home'])->name('user.home');
-Route::get('signup', [UserController::class, 'signup'])->name('user.signup');
+Route::get('register', [UserController::class, 'indexregister'])->name('user.indexregister');
 Route::get('profile', [UserController::class, 'profile'])->name('user.profile');

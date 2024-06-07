@@ -1,4 +1,3 @@
-@section('footer')
 <footer class="footer border-top border-dark py-4">
     <div class="container">
         <div class="row">
@@ -8,7 +7,7 @@
             </div>
             <div class="col-lg-4 text-center">
                 <div class="float-lg-start"> {{-- Tambahkan kelas float-lg-start untuk meratakan ke kiri pada layar besar --}}
-                    <h5 class="text-dark fw-bold mb-3 mt-4">Contact Us</h5>
+                    <h5 class="text-dark fw-bold mb-3 mt-4" id="contact">Contact Us</h5>
                     <p class="text-muted"><i class="fa-regular fa-envelope"></i> Smartmoney240@gmail.com</p>
                     <p class="text-muted"><i class="fa-solid fa-map-marker-alt"></i> Jl. Tamansari No.1, Tamansari, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40116</p>
                     <p class="text-muted"><i class="fa-solid fa-phone"></i> (021) 123-4567</p>
@@ -26,7 +25,7 @@
                     <a href="https://www.instagram.com" target="_blank" class="ikutikami icon-container custom-shadow">
                         <i class="fa-brands fa-instagram m-2"></i>
                     </a>
-                    <a href="mailto:info@smartmoney.com" class=" ikutikami icon-container custom-shadow">
+                    <a href="https://www.tiktok.com" class=" ikutikami icon-container custom-shadow">
                         <i class="fa-brands fa-tiktok m-2"></i>
                     </a>
                 </div>
@@ -39,4 +38,4 @@
         </div>
     </div>
 </footer>
-@show
+

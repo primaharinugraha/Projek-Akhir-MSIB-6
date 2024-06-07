@@ -1,5 +1,5 @@
 @extends('components.template')
-@section('title', 'Sign Up')
+@section('title', 'Register')
 
 
 
@@ -7,7 +7,7 @@
 @section('content')
 {{-- navbar --}}
 <nav class="navbar navbar-expand-lg navbar-light shadow p-4 d-flex justify-content-center">
-    <h2 class="" href="#"><span>Sign Up <i style=" font-weight: bolder;" class="fa-solid fa-user-plus"></i></span></h2>
+    <h2 class="" href="#"><span>Register <i style=" font-weight: bolder;" class="fa-solid fa-user-plus"></i></span></h2>
 </nav>
 <div class="signin">
     <div class="container-fluid py-4  bghijau">
@@ -36,7 +36,7 @@
                         <i class="fas fa-eye position-absolute mt-2" id="togglekonfirmasiPassword" style="cursor: pointer; top: 38px; right: 10px;"></i>
                     </div>
                     <div class="d-flex justify-content-center">
-                        <button type="submit" class="btn tombolhijau w-50 custom-shadow">Submit</button>
+                        <button type="submit" class="btn tombolhijau w-50 custom-shadow p-3 fw-bold fs-5">Submit</button>
                     </div>
                 </form>
            </div>
