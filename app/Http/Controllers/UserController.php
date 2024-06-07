@@ -55,10 +55,4 @@ class UserController extends Controller
         return redirect('login');
     }
 
-    public function showProfile($user_id)
-    {
-        $user = User::findOrFail($user_id);
-        return view('profile', compact('user'));
-    }
-
 }
