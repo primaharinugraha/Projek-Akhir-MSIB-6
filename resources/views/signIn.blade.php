@@ -9,7 +9,8 @@
 <div class="signin">
     <div class="container-fluid py-4 bghijau mt-5">
         <div class="container d-flex justify-content-center align-items-center">
-            <form class="w-75">
+            <form  action="" method="POST" class="w-75">
+                @csrf
                 <h2 class="mb-4 text-center mt-5">Sign In</h2>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email address</label>
@@ -17,7 +18,7 @@
                 </div>
                 <div class="mb-3 position-relative">
                     <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control border border-black" id="exampleInputPassword1">
+                    <input type="password" class="form-control border border-black" id="password" name="password">
                     <i class="fas fa-eye position-absolute mt-2" id="togglePassword" style="cursor: pointer; top: 38px; right: 10px;"></i>
                     <div class="form-text my-4 fs-5 fw-bold">Forgot Password?</div>
                 </div>
@@ -34,19 +35,13 @@
 </div>
 
 {{-- content end --}}
-
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const togglePassword = document.querySelector("#togglePassword");
-        const password = document.querySelector("#exampleInputPassword1");
-
-        togglePassword.addEventListener("click", function() {
-            // Toggle the type attribute
-            const type = password.getAttribute("type") === "password" ? "text" : "password";
-            password.setAttribute("type", type);
-            
-            // Toggle the eye icon
-            this.classList.toggle("fa-eye-slash");
+    $(document).ready(function() {
+        $('#togglePassword').on('click', function() {
+            const type = $('#password').attr('type') === 'password' ? 'text' : 'password';
+            $('#password').attr('type', type);
+            $(this).toggleClass('fa-eye-slash');
         });
     });
 </script>
