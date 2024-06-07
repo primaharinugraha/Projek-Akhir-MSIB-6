@@ -1,6 +1,6 @@
 {{-- navbar --}}
 @section('navbar')
-<nav class="navbar navbar-expand-lg navbar-light shadow p-3 fixed-top bg-white fw-semibold ">
+<nav class="navbar navbar-expand-lg navbar-light shadow p-4 fixed-top bg-white fw-semibold ">
   <a class="navbar-brand ms-2 d-flex align-items-center" href="">
     {{-- <img src="{{ asset('image/logosmartmoney.jpeg') }}?v=1" alt="Logo Smart Money" style="width: 125px; height: auto;" class="ms-3 d-inline-block align-text-top"> --}}
     <span class="d-flex align-items-center fs-4 fst-italic " style=" color: #00ae86;">SMART<span class="text-secondary ms-1"> MONEY</span>

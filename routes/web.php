@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,7 +24,7 @@ Route::get('/', function () {
 Route::get('Signin', [UserController::class, 'index'])->name('user.signin');
 Route::get('home', [UserController::class, 'home'])->name('user.home');
 
-Route::get('profile/{user}', [ProfileController::class, 'showProfile'])->name('profile');
+Route::get('/profile/{user}', [ProfileController::class, 'showProfile'])->name('profile');
 
 Route::get('register', [UserController::class, 'register'])->name('register');
 Route::post('register_user', [UserController::class, 'register_user'])->name('register_user');
