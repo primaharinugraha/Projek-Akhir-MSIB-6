@@ -89,12 +89,12 @@ body{
     background-color: #ccefe7;
 }
 
-.form{
+.search{
 
     position: relative;
 }
 
-.form .fa-search{
+.search .fa-search{
 
     position: absolute;
     top:17px;

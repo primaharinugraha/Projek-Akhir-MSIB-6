@@ -21,12 +21,14 @@ Route::get('/', function () {
     return view('landingpage');
 });
 
-Route::get('Signin', [UserController::class, 'index'])->name('user.signin');
+Route::get('login', [UserController::class, 'indexlogin'])->name('user.indexlogin');
 Route::get('home', [UserController::class, 'home'])->name('user.home');
+Route::get('signup', [UserController::class, 'signup'])->name('user.signup');
+Route::get('profile', [UserController::class, 'profile'])->name('user.profile');
 
 Route::get('/profile/{user}', [ProfileController::class, 'showProfile'])->name('profile');
 
-Route::get('register', [UserController::class, 'register'])->name('register');
+Route::get('register', [UserController::class, 'indexregister'])->name('register');
 Route::post('register_user', [UserController::class, 'register_user'])->name('register_user');
 
 Route::get('login', [LoginController::class, 'login'])->name('login');
