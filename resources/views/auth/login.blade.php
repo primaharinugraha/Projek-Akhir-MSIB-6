@@ -24,7 +24,7 @@
                 </div>
                 <button type="submit" class="btn tombolhijau w-100 custom-shadow p-3 fw-bold fs-5">Login</button>
                 <div class="form-text my-4 fs-5 fw-bold">
-                    Don't Have Account? <a href="{{ route('user.indexregister') }}" class="text-decoration-none text-dark">Create Here</a>
+                    Don't Have Account? <a href="{{ route('register') }}" class="text-decoration-none text-dark">Create Here</a>
                 </div>
             </form>
         </div>

@@ -7,7 +7,7 @@
             </div>
             <div class="col-lg-4 text-center">
                 <div class="float-lg-start"> {{-- Tambahkan kelas float-lg-start untuk meratakan ke kiri pada layar besar --}}
-                    <h5 class="text-dark fw-bold mb-3 mt-4" id="contact">Contact Us</h5>
+                    <h5 class="text-dark fw-bold mb-3 mt-4" id="contact">Kontak Kami</h5>
                     <p class="text-muted"><i class="fa-regular fa-envelope"></i> Smartmoney240@gmail.com</p>
                     <p class="text-muted"><i class="fa-solid fa-map-marker-alt"></i> Jl. Tamansari No.1, Tamansari, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40116</p>
                     <p class="text-muted"><i class="fa-solid fa-phone"></i> (021) 123-4567</p>
@@ -15,18 +15,15 @@
             </div>
             <div class="col-lg-4 d-flex flex-column align-items-center">
                 <h5 class="text-dark mb-4 fw-bold mt-4">Ikuti Kami</h5>
-                <div class="d-flex gap-4 fs-2 text-white justify-content-center">
-                    <a href="https://www.facebook.com" target="_blank" class="ikutikami icon-container custom-shadow">
+                <div class="d-flex gap-5 fs-2 text-white justify-content-center">
+                    <a href="https://www.facebook.com/share/2CdqRc8yNXUcXhzb/?mibextid=qi2Omg" target="_blank" class="ikutikami icon-container custom-shadow">
                         <i class="fa-brands fa-facebook m-2"></i>
                     </a>
-                    <a href="https://www.twitter.com" target="_blank" class="ikutikami icon-container custom-shadow">
+                    <a href="https://x.com/SmartMoney_16?t=d0eG7_UYi364syeOCHrkQg&s=09" target="_blank" class="ikutikami icon-container custom-shadow">
                         <i class="fa-brands fa-twitter m-2"></i>
                     </a>
-                    <a href="https://www.instagram.com" target="_blank" class="ikutikami icon-container custom-shadow">
+                    <a href="https://www.instagram.com/smartmoney2270?igsh=MTFoNnhmcnM5M3NtNA" target="_blank" class="ikutikami icon-container custom-shadow">
                         <i class="fa-brands fa-instagram m-2"></i>
-                    </a>
-                    <a href="https://www.tiktok.com" class=" ikutikami icon-container custom-shadow">
-                        <i class="fa-brands fa-tiktok m-2"></i>
                     </a>
                 </div>
             </div>

@@ -37,8 +37,9 @@
                     </div>
                     <div class="d-flex justify-content-center">
                         <button type="submit" class="btn tombolhijau w-50 custom-shadow p-3 fw-bold fs-5">Submit</button>
+                    </form>
                     </div>
-                </form>
+                
            </div>
     </div>
 </div>

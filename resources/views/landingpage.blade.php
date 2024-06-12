@@ -53,16 +53,16 @@
 <div class="container-fluid">
  <div class="container mt-3 p-4">
    <div class="row" data-aos="zoom-in-up">
-       <div class="col-sm-12  col-lg-4 my-4 ">
-           <div class="card  custom-shadow">
+       <div class="col-sm-12 col-lg-4 my-4 ">
+           <div class="card  custom-shadow heightcard">
                <div class="icont ms-3">
                    <div class="card w-25 logo">
                        <i class="fa-regular fa-file-lines fs-1 p-3 d-flex justify-content-center"></i>
                    </div>
                </div>
                <h5 class="fw-bold ms-3">PRODUK</h5>
-               <div class="card-body pt-0 ">
-                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum voluptatibus omnis ut perspiciatis veritatis aspernatur sed excepturi ab! Quae, molestiae.</p>
+               <div class="card-body pt-2 ">
+                   <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit debitis quos, enim accusamus eius quia laborum vero placeat officia nisi? Perferendis, corporis!</p>
                    <div class="widget-49">
                        <div class="widget-49-meeting-action">
                            <a href="#" class="btn btn-sm btn-flash-border-primary aksi-selanjutnya">Selengkapnya</a>
@@ -72,36 +72,36 @@
            </div>
        </div>
        <div class="col-sm-12  col-lg-4 my-4">
-           <div class="card  custom-shadow ">
+           <div class="card custom-shadow heightcard">
                <div class="icont ms-3">
                    <div class="card w-25 logo">
                        <i class="fa-solid fa-earth-asia fs-1 p-3 d-flex justify-content-center"></i>
                    </div>
                </div>
                <h5 class="fw-bold ms-3">BERITA</h5>
-               <div class="card-body pt-0">
-                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum voluptatibus omnis ut perspiciatis veritatis aspernatur sed excepturi ab! Quae, molestiae.</p>
+               <div class="card-body pt-2">
+                   <p>TemanKeu mungkin pernah menerima pesan singkat atau panggilan dari orang tak dikenal dengan kata-kata kasar dan mendiskreditkan, tanpa alasan jelas.</p>
                    <div class="widget-49">
                        <div class="widget-49-meeting-action">
-                           <a href="#" class="btn btn-sm btn-flash-border-primary aksi-selanjutnya">Selengkapnya</a>
+                           <a href="https://www.djkn.kemenkeu.go.id/kanwil-jabar/baca-artikel/14040/Menyikapi-Pinjaman-Online-Anugerah-atau-Musibah.html" target="blank" class="btn btn-sm btn-flash-border-primary aksi-selanjutnya">Selengkapnya</a>
                        </div>
                    </div>
                </div>
            </div>
        </div>
        <div class="col-sm-12 col-lg-4 my-4">
-           <div class="card  custom-shadow ">
+           <div class="card custom-shadow heightcard">
                <div class="icont ms-3">
                    <div class="card w-25 logo">
                        <i class="fa-regular fa-file-lines fs-1 p-3 d-flex justify-content-center"></i>
                    </div>
                </div>
                <h5 class="fw-bold ms-3">TIPS KEUANGAN</h5>
-               <div class="card-body pt-0">
-                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum voluptatibus omnis ut perspiciatis veritatis aspernatur sed excepturi ab! Quae, molestiae.</p>
+               <div class="card-body pt-2">
+                   <p>Tahun baru membuka peluang baru dalam pengelolaan keuangan. Evaluasi tahun lalu membantu merumuskan strategi yang lebih matang untuk 2024.</p>
                    <div class="widget-49">
                        <div class="widget-49-meeting-action">
-                           <a href="#" class="btn btn-sm btn-flash-border-primary aksi-selanjutnya">Selengkapnya</a>
+                           <a href="https://www.allianz.co.id/explore/10-cara-efektif-mengatur-keuangan-di-tahun-2024.html" target="_blank"class="btn btn-sm btn-flash-border-primary aksi-selanjutnya">Selengkapnya</a>
                        </div>
                    </div>
                </div>
@@ -122,8 +122,8 @@
      <h1 class="fw-bold">Mulai Hitung bersama <span style="color: #00ae86;" class=" fst-italic">SmartMoney</span></h1>
    </div>
    <div class=" col-sm-12 col-lg-4 d-flex inline-block align-items-center gap-3 justify-content-center mb-2" data-aos="zoom-in-up">
-     <a href="{{ route('user.indexlogin') }}" class="btn tombolhijau px-4 py-3 custom-shadow" role="button">Get Started</a>
-     <a href="" class="btn custom-shadow px-4 py-3 fw-bold bg-white" role="button">Learn More</a>
+     <a href="{{ route('login') }}" class="btn tombolhijau px-4 py-3 custom-shadow" role="button">Get Started</a>
+     <a href="{{route('e-learning')}}" class="btn custom-shadow px-4 py-3 fw-bold bg-white"  role="button">Learn More</a>
     </div>
  </div>
 </div>

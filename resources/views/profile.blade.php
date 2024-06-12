@@ -94,7 +94,7 @@
                 </div>
            </div>
            <div class="d-flex justify-content-center mt-5">
-                <button type="submit" class="btn tombolhijau w-50 custom-shadow p-3 fw-bold fs-5">Update Profil</button>
+                <button type="submit" class="btn tombolhijau w-50 custom-shadow p-2 fw-bold fs-5">Update</button>
            </div>
         </form>
      </div>
