@@ -7,50 +7,51 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    var colors = ['#FF5733', '#33FF57', '#3357FF', '#FF33A1', '#A133FF', '#33FFF1', '#FFAC33', '#33FFAC', '#FF5733', '#33FF57', '#3357FF', '#FF33A1'];
-    
-    var options = {
-      series: [{
-        data: [21, 22, 10, 28, 16, 21, 13, 30, 25, 18, 27, 15] // Example data for each month
-      }],
-      chart: {
-        height: 350,
-        type: 'bar',
-        events: {
-          click: function(chart, w, e) {
-            // console.log(chart, w, e)
-          }
-        }
-      },
-      colors: colors,
-      plotOptions: {
-        bar: {
-          columnWidth: '45%',
-          distributed: true,
-        }
-      },
-      dataLabels: {
-        enabled: false
-      },
-      legend: {
-        show: false
-      },
-      xaxis: {
-        categories: [
-          'Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 
-          'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'
-        ],
-        labels: {
-          style: {
-            colors: colors,
-            fontSize: '12px'
-          }
-        }
-      }
-    };
+    var color = '#3366CC';  // Warna biru yang dipilih
 
-    var chart = new ApexCharts(document.querySelector("#chart"), options);
-    chart.render();
+var options = {
+  series: [{
+    data: [21, 22, 10, 28, 16, 21, 13, 30, 25, 18, 27, 15] // Data contoh untuk setiap bulan
+  }],
+  chart: {
+    height: 350,
+    type: 'bar',
+    events: {
+      click: function(chart, w, e) {
+        // console.log(chart, w, e)
+      }
+    }
+  },
+  colors: [color],  // Menggunakan satu warna saja
+  plotOptions: {
+    bar: {
+      columnWidth: '45%',
+      distributed: true,
+    }
+  },
+  dataLabels: {
+    enabled: false
+  },
+  legend: {
+    show: false
+  },
+  xaxis: {
+    categories: [
+      'Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 
+      'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'
+    ],
+    labels: {
+      style: {
+        colors: color,  // Menggunakan satu warna untuk label
+        fontSize: '12px'
+      }
+    }
+  }
+};
+
+var chart = new ApexCharts(document.querySelector("#chart"), options);
+chart.render();
+
 
     var options = {
           series: [50, 25, 25],

@@ -119,7 +119,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item menu-open mb-3">
-            <a href="{{route('admin.dashboard')}}" class="nav-link active">
+            <a href="{{route('admin.dashboard')}}" class="nav-link  {{ Route::currentRouteName() == 'admin.dashboard' ? 'active' : '' }}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -128,13 +128,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item mb-3">
-                <a href="{{route('dataproyek.dashboard')}}" class="nav-link">
+                <a href="{{route('dataproyek.dashboard')}}" class="nav-link  {{ Route::currentRouteName() == 'dataproyek.dashboard' ? 'active' : '' }}">
                   <i class=" nav-icon far fa-clipboard"></i>
                   <p>Data Proyek</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('member.dashboard')}}" class="nav-link">
+                <a href="{{route('member.dashboard')}}" class="nav-link {{ Route::currentRouteName() == 'member.dashboard' ? 'active' : '' }}">
                   <i class=" nav-icon far fa-address-card"></i>
                   <p>Member</p>
                   <span class="right badge badge-success">20</span>
@@ -143,7 +143,7 @@
             </ul>
           </li>
           <li class="nav-item mb-3">
-            <a href="{{route('user.dashboard')}}" class="nav-link">
+            <a href="{{route('user.dashboard')}}" class="nav-link {{ Route::currentRouteName() == 'user.dashboard' ? 'active' : '' }}">
               <i class="nav-icon fas fa-user"></i>
               <p>
                 Users
@@ -152,7 +152,7 @@
             </a>
           </li>
           <li class="nav-item mb-3">
-            <a href="{{route('article.dashboard')}}" class="nav-link">
+            <a href="{{route('article.dashboard')}}" class="nav-link {{ Route::currentRouteName() == 'article.dashboard' ? 'active' : '' }}">
               <i class="nav-icon far fa-newspaper"></i>
               <p>
                 Article

@@ -43,10 +43,13 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{route('user.home')}}" class="nav-link">Home</a>
+        <a href="{{route('e-learning')}}" class="nav-link {{ Route::currentRouteName() == 'e-learning' ? 'active' : '' }}">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="{{route('kelolauang')}}" class="nav-link">Kelola Uang</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="{{route('user.home')}}" class="nav-link">Landing Page</a>
       </li>
     </ul>
 
@@ -87,31 +90,31 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item mb-3">
-                <a href="{{route('funda1')}}" class="nav-link active">
+                <a href="{{route('funda1')}}" class="nav-link {{ Route::currentRouteName() == 'funda1' ? 'active' : '' }}">
                     <i class="far fa-dot-circle nav-icon"></i>
                   <p>Pengantar 1.....</p>
                 </a>
               </li>
               <li class="nav-item mb-3">
-                <a href="{{route('funda2')}}" class="nav-link">
+                <a href="{{route('funda2')}}" class="nav-link {{ Route::currentRouteName() == 'funda2' ? 'active' : '' }}">
                     <i class="far fa-dot-circle nav-icon"></i>
                   <p>Pengantar 2.....</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('funda3')}}" class="nav-link">
+                <a href="{{route('funda3')}}" class="nav-link {{ Route::currentRouteName() == 'funda3' ? 'active' : '' }}">
                     <i class="far fa-dot-circle nav-icon"></i>
                   <p>Pengantar 3.....</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('funda4')}}" class="nav-link">
+                <a href="{{route('funda4')}}" class="nav-link {{ Route::currentRouteName() == 'funda4' ? 'active' : '' }}">
                     <i class="far fa-dot-circle nav-icon"></i>
                   <p>Pengantar 4.....</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('funda5')}}" class="nav-link">
+                <a href="{{route('funda5')}}" class="nav-link {{ Route::currentRouteName() == 'funda5' ? 'active' : '' }}">
                     <i class="far fa-dot-circle nav-icon"></i>
                   <p>Pengantar 5.....</p>
                 </a>
@@ -128,31 +131,31 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item mb-3">
-                <a href="{{route('inter1')}}" class="nav-link active">
+                <a href="{{route('inter1')}}" class="nav-link {{ Route::currentRouteName() == 'inter1' ? 'active' : '' }}">
                     <i class="far fa-dot-circle nav-icon"></i>
                   <p>Menengah 1.....</p>
                 </a>
               </li>
               <li class="nav-item mb-3">
-                <a href="{{route('inter2')}}" class="nav-link">
+                <a href="{{route('inter2')}}" class="nav-link {{ Route::currentRouteName() == 'inter2' ? 'active' : '' }}">
                     <i class="far fa-dot-circle nav-icon"></i>
                   <p>Menengah 2.....</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('inter3')}}" class="nav-link">
+                <a href="{{route('inter3')}}" class="nav-link {{ Route::currentRouteName() == 'inter3' ? 'active' : '' }}">
                     <i class="far fa-dot-circle nav-icon"></i>
                   <p>Menengah 3.....</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('inter4')}}" class="nav-link">
+                <a href="{{route('inter4')}}" class="nav-link {{ Route::currentRouteName() == 'inter4' ? 'active' : '' }}">
                     <i class="far fa-dot-circle nav-icon"></i>
                   <p>Menengah 4.....</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('inter5')}}" class="nav-link">
+                <a href="{{route('inter5')}}" class="nav-link {{ Route::currentRouteName() == 'inter5' ? 'active' : '' }}">
                     <i class="far fa-dot-circle nav-icon"></i>
                   <p>Menengah 5.....</p>
                 </a>
@@ -169,31 +172,31 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item mb-3">
-                <a href="{{route('adv1')}}" class="nav-link active">
+                <a href="{{route('adv1')}}" class="nav-link {{ Route::currentRouteName() == 'adv1' ? 'active' : '' }}">
                     <i class="far fa-dot-circle nav-icon"></i>
                   <p>Advance 1.....</p>
                 </a>
               </li>
               <li class="nav-item mb-3">
-                <a href="{{route('adv2')}}" class="nav-link">
+                <a href="{{route('adv2')}}" class="nav-link {{ Route::currentRouteName() == 'adv2' ? 'active' : '' }}">
                     <i class="far fa-dot-circle nav-icon"></i>
                   <p>Advance 2.....</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('adv3')}}" class="nav-link">
+                <a href="{{route('adv3')}}" class="nav-link {{ Route::currentRouteName() == 'adv3' ? 'active' : '' }}">
                     <i class="far fa-dot-circle nav-icon"></i>
                   <p>Advance 3.....</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('adv4')}}" class="nav-link">
+                <a href="{{route('adv4')}}" class="nav-link {{ Route::currentRouteName() == 'adv4' ? 'active' : '' }}">
                     <i class="far fa-dot-circle nav-icon"></i>
                   <p>Advence 4.....</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('adv5')}}" class="nav-link">
+                <a href="{{route('adv5')}}" class="nav-link {{ Route::currentRouteName() == 'adv5' ? 'active' : '' }}">
                     <i class="far fa-dot-circle nav-icon"></i>
                   <p>Advance 5.....</p>
                 </a>

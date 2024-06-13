@@ -16,7 +16,7 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav mb-2 mb-lg-0 gap-3"> 
         <li class="nav-item">
-          <a class="nav-link activenavbar" href="{{ route('user.home') }}">Home</a>
+          <a class="nav-link {{ Route::currentRouteName() === 'user.home' ? 'activenavbar' : '' }}" href="{{ route('user.home') }}">Home</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -29,7 +29,7 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{route('article')}}">Blog</a>
+          <a class="nav-link {{ Route::currentRouteName() === 'article' ? 'activenavbar' : '' }}" href="{{ route('article') }}">Blog</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#contact">Kontak</a>
