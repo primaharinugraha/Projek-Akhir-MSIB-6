@@ -31,7 +31,7 @@ Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('home', [UserController::class, 'home'])->name('user.home');
 
 Route::get('register', [UserController::class, 'register'])->name('register');
-Route::post('register_user', [UserController::class, 'register_user'])->name('register_user');
+Route::post('register_user', [UserController::class, 'registerUser'])->name('register_user');
 
 Route::get('profile/user', [ProfileController::class, 'showprofile'])->name('profile');
 

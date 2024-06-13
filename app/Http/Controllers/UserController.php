@@ -18,6 +18,27 @@ class UserController extends Controller
     public function register() {
         return view('auth.register');
     }
+
+    public function registerUser(UserRequest $request)
+    {
+        $data = $request->validated();
+    
+        // Cari user berdasarkan email
+        $user = User::where('email', $request->email)->first();
+    
+        // Jika user tidak ditemukan, buat user baru
+        if (!$user) {
+            $user = User::create($data);
+        }
+    
+        // Pastikan ada profil untuk user (jika belum ada)
+        if (!$user->profile) {
+            $user->profile()->create($data);
+        }
+    
+        // Redirect ke halaman login
+        return redirect('login');
+    }
     // public function profile(){
     //     return view('profile');
     // }
