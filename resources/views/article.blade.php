@@ -11,7 +11,7 @@
     <div class="row mt-5">
         <div class="col-lg-4">
             <div class="card shadow p-2 rounded">
-                <img src="https://www.djkn.kemenkeu.go.id/files/images/2021/07/fintech.jpeg" alt="" class="img-fluid w-100 rounded " style="height: 350px;">
+                <img src="https://www.djkn.kemenkeu.go.id/files/images/2021/07/fintech.jpeg" alt="" class="img-fluid w-100 rounded " style="height: 300px;">
             </div>
             
         </div>
@@ -25,7 +25,7 @@
     <div class="row mt-5">
         <div class="col-lg-4">
             <div class="card shadow p-2 rounded">
-            <img src="https://cdn.cnbcindonesia.com/cnbc/images/default.jpg" alt="" class="img-fluid w-100 rounded"style="height: 350px;">
+            <img src="https://cdn.cnbcindonesia.com/cnbc/images/default.jpg" alt="" class="img-fluid w-100 rounded"style="height: 300px;">
         </div>
         </div>
         <div class="col-lg-8">

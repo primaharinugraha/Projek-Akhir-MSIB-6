@@ -36,9 +36,13 @@ Route::post('register_user', [UserController::class, 'register_user'])->name('re
 Route::get('profile/user', [ProfileController::class, 'showprofile'])->name('profile');
 
 Route::get('proyek', [UserController::class, 'proyek'])->name('proyek');
+Route::get('proyek/show', [UserController::class, 'show'])->name('proyek.show');
 Route::get('create/proyek', [UserController::class, 'create'])->name('create.proyek');
 
 Route::get('kelolauang', [UserController::class, 'kelolauang'])->name('kelolauang');
+Route::get('kelolauang/create', [UserController::class, 'createkelolauang'])->name('kelolauang.create');
+
+
 Route::get('Article', [UserController::class, 'article'])->name('article');
 
 Route::get('E-learning', [EleraningController::class, 'indexeleraning'])->name('e-learning');

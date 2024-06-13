@@ -28,9 +28,15 @@ class UserController extends Controller
     public function create(){
         return view('proyek.createproyek');
     }
+    public function show(){
+        return view('proyek.showproyek');
+    }
 
      public function kelolauang(){
         return view('kelolauang.indexkelolauang');
+    }
+     public function createkelolauang(){
+        return view('kelolauang.createkelolauang');
     }
      public function article(){
         return view('article');

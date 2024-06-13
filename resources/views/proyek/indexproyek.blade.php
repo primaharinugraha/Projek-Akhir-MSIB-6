@@ -15,12 +15,43 @@
                     <i class="fa-solid fa-plus"></i>
                 </button>
             </a>
-           
-            <button type="submit" class=" btn btn-danger text-white">
-                Hapus
-                <i class="fa-solid fa-trash-can"></i>
-            </button>
+        
         </div>
+        <table class="table table table-striped table-bordered mt-5">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Goal</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{-- @foreach ($plans as $plan) --}}
+                    <tr>
+                        <td></td>
+                        <td> IDR</td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <a href="{{route('proyek.show')}}" class="btn btn-info me-2">
+                                Lihat
+                                <i class="fa-solid fa-eye"></i>
+                            </a>
+                            <form action="" method="POST" style="display:inline;">
+                                {{-- @csrf
+                                @method('DELETE') --}}
+                                <button type="submit" class=" btn btn-danger text-white">
+                                    Hapus
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                {{-- @endforeach --}}
+            </tbody>
+        </table>
     </div>
 </div>
 @include('components.footer')

@@ -32,9 +32,6 @@
           <a class="nav-link" href="{{route('article')}}">Blog</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Tentang kami</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="#contact">Kontak</a>
         </li>
       </ul>

@@ -89,6 +89,14 @@ body{
     height: 320px;
 }
 
+.hovered-card {
+    transition: .2s;
+  }
+  
+  .hovered-card:hover {
+    transform: scale(1.1);
+  }
+
 .taglinne {
     background-color: #ccefe7;
 }
@@ -140,14 +148,14 @@ body{
 }
 
 
-
-
-
-
-
 .bghijau{
     background-color: #ccefe7;
 }
+
+
+/* card tentang kami */
+
+
 
 /* footer */
 

@@ -20,22 +20,19 @@
         <div class="carousel-item active" data-bs-interval="10000">
           <img src="{{asset('image/1.png')}}" class="d-block w-100 h-50" alt="...">
           <div class="carousel-caption d-none d-md-block">
-            <h5>First slide label</h5>
-            <p>Some representative placeholder content for the first slide.</p>
+            <h5>First slide</h5>
           </div>
         </div>
         <div class="carousel-item" data-bs-interval="2000">
           <img src="{{asset('image/2.png')}}" class="d-block w-100 h-75" alt="...">
           <div class="carousel-caption d-none d-md-block">
-            <h5>Second slide label</h5>
-            <p>Some representative placeholder content for the second slide.</p>
+            <h5>Second slide</h5>
           </div>
         </div>
         <div class="carousel-item">
           <img src="{{asset('image/3.png')}}" class="d-block w-100 h-75" alt="...">
           <div class="carousel-caption d-none d-md-block">
-            <h5>Third slide label</h5>
-            <p>Some representative placeholder content for the third slide.</p>
+            <h5>Third slide</h5>
           </div>
         </div>
       </div>
@@ -50,19 +47,19 @@
     </div>
    
 <section class="border-top border-bottom border-black">
-<div class="container-fluid">
- <div class="container mt-3 p-4">
-   <div class="row" data-aos="zoom-in-up">
-       <div class="col-sm-12 col-lg-4 my-4 ">
-           <div class="card  custom-shadow heightcard">
-               <div class="icont ms-3">
+  <div class="container-fluid">
+    <div class="container mt-3 p-4">
+        <div class="row" data-aos="zoom-in-up">
+           <div class="col-sm-12 col-lg-4 my-4 ">
+              <div class="card  custom-shadow heightcard hovered-card ">
+                   <div class="icont ms-3">
                    <div class="card w-25 logo">
                        <i class="fa-regular fa-file-lines fs-1 p-3 d-flex justify-content-center"></i>
                    </div>
                </div>
-               <h5 class="fw-bold ms-3">PRODUK</h5>
+               <h5 class="fw-bold ms-3">TENTANG KAMI</h5>
                <div class="card-body pt-2 ">
-                   <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit debitis quos, enim accusamus eius quia laborum vero placeat officia nisi? Perferendis, corporis!</p>
+                   <p>SmartMoney adalah platform pengelolaan keuangan sederhana dan mudah digunakan untuk semua usia, dilengkapi berbagai fitur menarik dan nyaman digunakan.</p>
                    <div class="widget-49">
                        <div class="widget-49-meeting-action">
                            <a href="#" class="btn btn-sm btn-flash-border-primary aksi-selanjutnya">Selengkapnya</a>
@@ -72,7 +69,7 @@
            </div>
        </div>
        <div class="col-sm-12  col-lg-4 my-4">
-           <div class="card custom-shadow heightcard">
+           <div class="card custom-shadow heightcard hovered-card ">
                <div class="icont ms-3">
                    <div class="card w-25 logo">
                        <i class="fa-solid fa-earth-asia fs-1 p-3 d-flex justify-content-center"></i>
@@ -90,10 +87,10 @@
            </div>
        </div>
        <div class="col-sm-12 col-lg-4 my-4">
-           <div class="card custom-shadow heightcard">
+           <div class="card custom-shadow heightcard hovered-card ">
                <div class="icont ms-3">
                    <div class="card w-25 logo">
-                       <i class="fa-regular fa-file-lines fs-1 p-3 d-flex justify-content-center"></i>
+                    <i class="fa-regular fa-lightbulb fs-1 p-3 d-flex justify-content-center"></i>
                    </div>
                </div>
                <h5 class="fw-bold ms-3">TIPS KEUANGAN</h5>
@@ -112,22 +109,120 @@
 </div>
 </section>
 
-<div class="contaner-fluid taglinne py-5" >
-<div class="container" >
- <div class="row">
-   <div class="col-sm-12 col-lg-8 text-center mb-2" data-aos="fade-right"
-   data-aos-offset="220"
-   data-aos-easing="ease-in-sine">
-     <h1 class="fw-bold">Siap Untuk mengelola Uang Lebih Efisien?</h1>
-     <h1 class="fw-bold">Mulai Hitung bersama <span style="color: #00ae86;" class=" fst-italic">SmartMoney</span></h1>
-   </div>
-   <div class=" col-sm-12 col-lg-4 d-flex inline-block align-items-center gap-3 justify-content-center mb-2" data-aos="zoom-in-up">
-     <a href="{{ route('login') }}" class="btn tombolhijau px-4 py-3 custom-shadow" role="button">Get Started</a>
-     <a href="{{route('e-learning')}}" class="btn custom-shadow px-4 py-3 fw-bold bg-white"  role="button">Learn More</a>
+      <div class="contaner-fluid taglinne py-5" >
+        <div class="container py-5">
+           <div class="row">
+              <div class="col-sm-12 col-lg-8 text-center mb-2" data-aos="fade-right"
+              data-aos-offset="220"
+              data-aos-easing="ease-in-sine">
+                <h1 class="fw-bold">Siap Untuk mengelola Uang Lebih Efisien?</h1>
+                <h1 class="fw-bold">Mulai Hitung bersama <span style="color: #00ae86;" class=" fst-italic">SmartMoney</span></h1>
+              </div>
+           <div class=" col-sm-12 col-lg-4 d-flex inline-block align-items-center gap-3 justify-content-center mb-2" data-aos="zoom-in-up">
+            <a href="{{ route('login') }}" class="btn tombolhijau px-4 py-3 custom-shadow" role="button">Get Started</a>
+            <a href="{{route('e-learning')}}" class="btn custom-shadow px-4 py-3 fw-bold bg-white"  role="button">Learn More</a>
+            </div>
+        </div>
+      </div>
     </div>
- </div>
+    {{-- maps --}}
+    <div class="container-fluid py-5 border-top border-dark">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="card p-3 custom-shadow">
+              <div class="ratio ratio-16x9">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.8915647494414!2d107.60514047379051!3d-6.903569067559032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e64568e9d7ab%3A0x3dbdedce3b24483d!2sJl.%20Tamansari%20No.1%2C%20Tamansari%2C%20Kec.%20Bandung%20Wetan%2C%20Kota%20Bandung%2C%20Jawa%20Barat%2040116!5e0!3m2!1sid!2sid!4v1718217092995!5m2!1sid!2sid"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <h1 class="fw-bold text-center py-4"style="color: #00ae86;">Lokasi Kantor <span  class=" fst-italic text-dark">SmartMoney</span></h1>
+            <h4 class="text-center">Mari Kunjungi Kantor Kami dan bertemu langsung dengan tim ahli kami. Dapatkan solusi keuangan terbaik yang dirancang khusus untuk kebutuhan Anda, dan mulailah perjalanan menuju kesuksesan finansial bersama kami.</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{-- tentang kami --}}
+    <div class="contaner-fluid taglinne py-5 border-top border-dark">
+      <div class="container  p-5" style="border: 4px solid  #00ae86;  border-radius: 40px;">
+        <h1 class="text-center fw-bold" data-aos="fade-right"
+        data-aos-offset="220"
+        data-aos-easing="ease-in-sine">Tentang <span style="color: #00ae86;" class="">Kami</span></h1>
+        <div class="mt-3 bg-dark mx-auto rounded" style="height: 3px;width: 155px"></div>
+          <div class="mt-3">
+            <h3 class="text-center" data-aos="fade-left"
+            data-aos-offset="220"
+            data-aos-easing="ease-in-sine">SmartMoney hadir sebagai platform pengelolaan keuangan yang sederhana dan mudah digunakan, tanpa batasan usia. Kemudahan yang ditawarkan SmartMoney memungkinkan penggunanya untuk mengelola keuangan dengan nyaman.
+              Lebih dari sekadar platform pengelolaan keuangan utama, SmartMoney dilengkapi dengan berbagai fitur menarik, di antaranya:
+            </h3>
+            <div class="row mt-5"data-aos="zoom-in-up">
+              <div class="col-sm-12 col-lg-4 my-4 ">
+                 <div class="card custom-shadow heightcard hovered-card ">
+                      <div class="icont ms-3">
+                      <div class="card w-25 logo">
+                        <i class="fa-solid fa-diagram-project fs-1 p-3 d-flex justify-content-center"></i>
+                      </div>
+                  </div>
+                  <h5 class="fw-bold ms-3">Fitur Proyek</h5>
+                  <div class="card-body pt-2 ">
+                      <p> Membantu Anda merencanakan dan mengelola keuangan masa depan dengan lebih terarah, efisien, mudah dipahami, serta memberikan hasil yang optimal</p>
+                      <div class="widget-49">
+                          <div class="widget-49-meeting-action">
+                              <a href="{{route('proyek')}}" class="btn btn-sm btn-flash-border-primary aksi-selanjutnya">Mulai Proyek</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+              <div class="col-sm-12 col-lg-4 my-4 ">
+                 <div class="card  custom-shadow heightcard hovered-card ">
+                      <div class="icont ms-3">
+                      <div class="card w-25 logo">
+                        <i class="fa-solid fa-file-video fs-1 p-3 d-flex justify-content-center"></i>
+                      </div>
+                  </div>
+                  <h5 class="fw-bold ms-3">Fitur E-Learning</h5>
+                  <div class="card-body pt-2 ">
+                      <p>  Dapatkan wawasan berharga dalam pengelolaan keuangan melalui video edukasi yang dibawakan oleh para profesional di bidang keuangan</p>
+                      <div class="widget-49">
+                          <div class="widget-49-meeting-action">
+                              <a href="{{route('e-learning')}}" class="btn btn-sm btn-flash-border-primary aksi-selanjutnya">Mulai Belajar</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+              <div class="col-sm-12 col-lg-4 my-4 ">
+                 <div class="card  custom-shadow heightcard hovered-card ">
+                      <div class="icont ms-3">
+                      <div class="card w-25 logo">
+                          <i class="fa-solid fa-newspaper fs-1 p-3 d-flex justify-content-center"></i>
+                      </div>
+                  </div>
+                  <h5 class="fw-bold ms-3">Fitur Artikel</h5>
+                  <div class="card-body pt-2 ">
+                      <p> Temukan informasi terbaru seputar pengelolaan keuangan, isu keuangan, dan studi kasus keuangan untuk menambah pengetahuan dan wawasan Anda.</p>
+                      <div class="widget-49">
+                          <div class="widget-49-meeting-action">
+                              <a href="{{route('article')}}" class="btn btn-sm btn-flash-border-primary aksi-selanjutnya">Lihat Artikel</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </div>
+  </div>
 </div>
-</div>
+
+  
+  
+
+
+
+
 {{-- content end --}}
 
 @include('components.footer')
