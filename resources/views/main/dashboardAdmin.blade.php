@@ -4,13 +4,13 @@
     </div>
 @endif
 
-<div>{{ $usersCount }}</div>
-<div>{{ $plansCount }}</div>
-<div>{{ $articlesCount }}</div>
-<div>{{ $assetsTotal }}</div>
-<div>{{ $liabilitiesTotal }}</div>
-<div>{{ $financesTotal }}</div>
-<div>{{ $assetsCount }}</div>
-<div>{{ $liabilitiesCount }}</div>
-<div>{{ $assetsByMonth }}</div>
-<div>{{ $liabilitiesByMonth }}</div>
+<div>JUMLAH USER{{ $usersCount }}</div>
+<div>JUMLAH PROYEK{{ $plansCount }}</div>
+<div>JUMLAH ARTICLE DAN VIDEO{{ $articlesCount }}</div>
+<div>TOTAL PERHITUNGAN ASSET{{ $assetsTotal }}</div>
+<div>TOTAL PERHITUNGAN LIABILITY{{ $liabilitiesTotal }}</div>
+<div>TOTAL ASSET - LIABILITY{{ $financesTotal }}</div>
+<div>JUMLAH ASSET{{ $assetsCount }}</div>
+<div>JUMLAH LIABILITY{{ $liabilitiesCount }}</div>
+<div>TOTAL PERHITUNGAN ASSET DALAM BULAN{{ $assetsByMonth }}</div>
+<div>TOTAL PERHITUNGAN LIABILITY DALAM BULAN{{ $liabilitiesByMonth }}</div>

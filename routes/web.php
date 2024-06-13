@@ -8,6 +8,7 @@ use App\Http\Controllers\FinanceController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\PlanController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\SubscriptionController;
 
 
 /*
@@ -57,7 +58,11 @@ Route::delete('plans/{plan}', [PlanController::class, 'destroy'])->middleware('a
 Route::get('posts', [PostController::class, 'index'])->middleware('auth')->name('posts.index');
 Route::get('posts/create', [PostController::class, 'create'])->middleware('auth')->can('create', App\Models\Post::class)->name('posts.create');
 Route::post('posts', [PostController::class, 'store'])->middleware('auth')->can('create', App\Models\Post::class)->name('posts.store');
-Route::get('posts/{post}', [PostController::class, 'show'])->middleware('auth')->can('view', 'post')->name('posts.show');
+Route::get('posts/{post}', [PostController::class, 'show'])->middleware('auth')->name('posts.show');
 Route::get('posts/{post}/edit', [PostController::class, 'edit'])->middleware('auth')->can('update', 'post')->name('posts.edit');
 Route::put('posts/{post}', [PostController::class, 'update'])->middleware('auth')->can('update', 'post')->name('posts.update');
 Route::delete('posts/{post}', [PostController::class, 'destroy'])->middleware('auth')->can('delete', 'post')->name('posts.destroy');
+
+Route::get('subscription', [SubscriptionController::class, 'home'])->middleware('auth')->name('subscription.home');
+Route::post('subscription/subscribe', [SubscriptionController::class, 'subscribe'])->middleware('auth')->name('subscription.subscribe');
+Route::post('subscription/cancel', [SubscriptionController::class, 'cancel'])->middleware('auth')->name('subscription.cancel');

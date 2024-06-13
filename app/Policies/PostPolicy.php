@@ -21,7 +21,7 @@ class PostPolicy
      */
     public function view(User $user, Post $post): bool
     {
-        return $user->role == 'admin' || $user->profile->premium || !$post->premium;
+        // return $user->role == 'admin' || $user->profile->premium || !$post->premium;
     }
 
     /**

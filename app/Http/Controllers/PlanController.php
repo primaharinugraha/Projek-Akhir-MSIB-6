@@ -11,9 +11,9 @@ class PlanController extends Controller
 {
     public function create()
     {
-        if(Auth::user()->plans()->count() >= 1 && !Auth::user()->premium)
+        if(!(Auth::user()->profile->premium || Auth::user()->role == 'admin') && Auth::user()->plans()->count() >= 1)
         {
-            return redirect()->route('plans.index')->with('error', 'You can only have one plan.');
+            return redirect()->route('subscription.home')->with('error', 'You can only have one plan. Subscribe for more.');
         }
         return view('plans.create');
     }

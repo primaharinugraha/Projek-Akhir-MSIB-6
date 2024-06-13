@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\StorePostRequest;
 use App\Models\Post;
 use App\Http\Requests\UpdatePostRequest;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -36,6 +37,10 @@ class PostController extends Controller
 
     public function show(Post $post)
     {
+        if(!(Auth::user()->profile->premium || Auth::user()->role == 'admin') && $post->premium)
+        {
+            return redirect()->route('subscription.home')->with('error', 'You can view non-premium contents. Subscribe to access premium contents.');
+        }
         return view('posts.show', compact('post'));
     }
 
