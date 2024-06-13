@@ -122,7 +122,7 @@
      <h1 class="fw-bold">Mulai Hitung bersama <span style="color: #00ae86;" class=" fst-italic">SmartMoney</span></h1>
    </div>
    <div class=" col-sm-12 col-lg-4 d-flex inline-block align-items-center gap-3 justify-content-center mb-2" data-aos="zoom-in-up">
-     <a href="{{ route('user.indexlogin') }}" class="btn tombolhijau px-4 py-3 custom-shadow" role="button">Get Started</a>
+     <a href="{{ route('login') }}" class="btn tombolhijau px-4 py-3 custom-shadow" role="button">Get Started</a>
      <a href="" class="btn custom-shadow px-4 py-3 fw-bold bg-white" role="button">Learn More</a>
     </div>
  </div>

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ProfileRequest extends FormRequest
+class FinanceRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,10 +22,10 @@ class ProfileRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name'=>['required'],
-            'phone_number'=>['required','max=14'],
-            'gender'=>['required','in:male,female'],
-            'job'=>['required'],
+            'type' => ['required', 'in:asset,liability'],
+            'name' => ['required', 'string', 'max:255'],
+            'value' => ['required'],
+            'date' => ['required', 'date_format:Y-n'],
         ];
     }
 }

@@ -4,53 +4,58 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Http\Requests\UserRequest;
+use App\Http\Requests\UpdateProfileRequest;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function indexlogin(){
-        return view('auth.login');
-    }
-
     public function home()
     {
-        return view('landingpage');
+        return redirect()->route('home');
     }
-    public function indexregister() {
+    public function register()
+    {
         return view('auth.register');
     }
-    public function register_user(Request $request)
+    public function register_user(UserRequest $request)
     {
-        $request->validate([
-            'email' => 'required',
-            'password' => 'required|confirmed',
-            'first_name' =>'required',
-            'last_name' =>'required',
-            'phone_number' =>'required',
-            'gender' =>'required',
-            'job' =>'required',
-        ]);
+        $data = $request->validated();
 
 
         $user = User::where('email', $request->email)->first();
 
         if (!$user) {
-            $user = User::create([
-                'email' => $request->email,
-                'password' => $request->password,
-            ]);
+            $user = User::create($data);
         }
 
-        $user->profile()->create([
-            'first_name' => $request->first_name,
-            'last_name' => $request->last_name,
-            'phone_number' => $request->phone_number,
-            'gender' => $request->gender,
-            'job' => $request->job,
-        ]);
+        if (!$user->profile) {
+            $user->profile()->create($data);
+        }
 
 
         return redirect('login');
     }
 
+    public function update(UpdateProfileRequest $request, User $user)
+    {
+        $data = $request->validated();
+
+        if ($data['email'] == '') {
+            unset($data['email']);
+        }
+
+        if (isset($data['photo'])) {
+            $data['photo_path'] = $data['photo']->store('media', 'public');
+        }
+
+        $user->update($data);
+        $user->profile->update($data);
+
+        return redirect()->route('profiles.edit', ['user' => $user])->with('success', 'Update successfully.');
+    }
+
+    public function edit(User $user)
+    {
+        return view('profiles.edit', ['profile' => $user->profile, 'user' => $user]);
+    }
 }

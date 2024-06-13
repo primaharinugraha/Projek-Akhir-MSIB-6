@@ -12,12 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('finances', function (Blueprint $table) {
+            $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->enum('type', ['asset','liability']);
-            $table->String('name');
-            $table->integer('total');
-            $table->integer('total_asset');
-            $table->integer('total_liability');
+            $table->string('name');
+            $table->integer('value');
             $table->date('date');
             $table->timestamps();
         });

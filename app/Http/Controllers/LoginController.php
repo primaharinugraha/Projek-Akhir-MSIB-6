@@ -10,7 +10,7 @@ class LoginController extends Controller
 {
 
     public function login(Request $request){
-        return view('login');
+        return view('auth.login');
     }
     public function authenticate(Request $request): RedirectResponse
     {
@@ -22,9 +22,9 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            dd('Berhasil login dengan user: ', Auth::user());
+            // dd('Berhasil login dengan user: ', Auth::user());
 
-            return redirect()->route('profile', ['user_id' => Auth::user()->id]);
+            return redirect()->route('profiles.edit', ['user' => Auth::user()->id]);
         }
 
         return back()->withErrors([
@@ -34,6 +34,6 @@ class LoginController extends Controller
 
     public function logout(){
         Auth::logout();
-        return redirect()->route('products.all');
+        return redirect()->route('login');
     }
 }

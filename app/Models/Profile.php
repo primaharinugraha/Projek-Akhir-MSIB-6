@@ -11,13 +11,22 @@ class Profile extends Model
     use HasFactory;
 
     protected $table = 'profiles';
+    protected $primaryKey = 'user_id';
 
     protected $fillable = [
-        'first_name',
-        'last_name',
+        'user_id',
+        'name',
         'phone_number',
         'gender',
         'job',
+        'source_income',
+        'country',
+        'last_education',
+        'postal_code',
+        'address',
+        'photo_path',
+        'age',
+        'married_status',
     ];
     
     public function user(): BelongsTo
