@@ -8,6 +8,11 @@
 <div class="container-fluid py-5" style="background: #ccefe7;">
     <div class="container pt-5">
         <h3 class="text-center mt-5 fw-bold" style="color: #00ae86; ">Proyek</h3>
+        @if (session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
         <div class="d-flex justify-content-start gap-3 mt-5">
             <a href="{{route('create.proyek')}}">
                 <button type="submit" class=" btn text-white" style="background: #00ae86;">
