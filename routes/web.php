@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FinanceController;
+use App\Http\Controllers\MainController;
 use App\Http\Controllers\PlanController;
 use App\Http\Controllers\PostController;
 
@@ -24,6 +25,8 @@ Route::get('/', function () {
     return view('landingpage');
 })->name('home');
 
+Route::get('dashboard/user', [MainController::class, 'dashboardUser'])->middleware('auth')->name('main.dashboardUser');
+Route::get('dashboard/admin', [MainController::class, 'dashboardAdmin'])->middleware('auth')->name('main.dashboardAdmin');
 
 Route::get('home', [UserController::class, 'home'])->name('user.home');
 
