@@ -10,7 +10,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-2">Hallo, Admin</h1>
+            <h1 class="m-2">Hallo, {{Auth::user()->profile->name}}</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -28,13 +28,13 @@
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
+          @if(Auth::user()->role == 'admin')
           <div class="col-lg-3 col-6">
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>150</h3>
-
-                <p>Members</p>
+                <h3>{{$berlanggananCount}}</h3>
+                <p>Berlangganan</p>
               </div>
               <div class="icon">
                 <i class="ion ion-bag"></i>
@@ -47,14 +47,13 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>53<sup style="font-size: 20px">%</sup></h3>
-
+                <h3>{{ $plansCount }}<sup style="font-size: 20px"></sup></h3>
                 <p>Data Proyek</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{{route('dataproyek.dashboard')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -62,8 +61,7 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>44</h3>
-
+                <h3>{{ $usersCount }}</h3>
                 <p>User Registrations</p>
               </div>
               <div class="icon">
@@ -78,7 +76,6 @@
             <div class="small-box bg-danger">
               <div class="inner">
                 <h3>65</h3>
-
                 <p>Article</p>
               </div>
               <div class="icon">
@@ -87,6 +84,21 @@
               <a href="{{route('article.dashboard')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
+          @else
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3>{{ $plansCount }}<sup style="font-size: 20px"></sup></h3>
+                <p>Data Proyek</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+              </div>
+              <a href="{{route('dataproyek.dashboard')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+          @endif
           <!-- ./col -->
         </div>
         <!-- /.row -->
@@ -95,27 +107,22 @@
           <!-- Left col -->
           <section class="col-lg-7 connectedSortable">
            
-            <!-- DIRECT CHAT -->
-           
-            <!--/.direct-chat -->
-
-      
-            <!-- /.card -->
           </section>
           <!-- /.Left col -->
           <!-- right col (We are only adding the ID to make the widgets sortable)-->
           <section class="col-lg-5 connectedSortable">
-
+    
             <!-- Map card -->
-  
+    
             <!-- /.card -->
-
+    
           </section>
           <!-- right col -->
         </div>
         <!-- /.row (main row) -->
-      </div><!-- /.container-fluid -->
+      </div>
     </section>
+    
     <!-- /.content -->
   </div>
 @endsection

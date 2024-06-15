@@ -22,29 +22,30 @@
                     <label for="email" class="form-label">Email</label>
                     <input type="email" class="form-control border border-black" id="email" name="email" aria-describedby="emailHelp">
                 </div>
-                <div class="mb-3">
+                <div class="mb-3 position-relative">
                     <label for="password" class="form-label">Paswoord</label>
                     <input type="password" class="form-control border border-black" id="password" name="password">
+                    <i class="fas fa-eye position-absolute mt-2" id="togglePassword" style="cursor: pointer; top: 38px; right: 10px;"></i>
                 </div>
                 <div class="mb-3">
                     <label for="password_confirmation" class="form-label">Konfirmasi Pasword</label>
                     <input type="password" class="form-control border border-black" id="password_confirmation" name="password_confirmation">
                 </div>
                 <div class="d-flex justify-content-center">
-                    <button type="submit" class="btn tombolhijau w-50 custom-shadow p-3 fw-bold fs-5">Submit</button>
+                    <button type="submit" class="btn tombolhijau w-100 custom-shadow p-3 fw-bold fs-5">Register</button>
+                </div>
+                <div class="form-text my-4 fs-5 fw-bold">
+                    Already Have an Account? <a href="{{ route('login') }}" class="text-decoration-none text-dark">Sign In Here</a>
                 </div>
             </form>
-                    </div>
+        </div>
                 
            </div>
     </div>
 </div>
 {{-- content end --}}
 
-<footer class="footer bg-white border-top border-black p-3">
-    <div class="container mt-3">
-    </div>
-</footer>
+@include('components.footer')
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script>
@@ -55,13 +56,6 @@
             $('#password').attr('type', type);
             $(this).toggleClass('fa-eye-slash');
         });
-
-        $('#togglekonfirmasiPassword').on('click', function() {
-            const type = $('#password_confirmation').attr('type') === 'password' ? 'text' : 'password';
-            $('#password_confirmation').attr('type', type);
-            $(this).toggleClass('fa-eye-slash');
-        });
-
     });
 </script>
 @endsection

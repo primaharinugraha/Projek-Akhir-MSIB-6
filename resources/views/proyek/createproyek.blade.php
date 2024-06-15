@@ -8,7 +8,7 @@
 <div class="container-fluid py-5" style="background: #ccefe7;">
     <div class="container pt-5">
         <div class="mt-3">
-            <a href="{{route('proyek')}}">
+            <a href="{{route('plans.index')}}">
                 <button class=" btn btn-danger text-white">
                     Cancel
                     <i class="fa-solid fa-xmark"></i>
@@ -26,7 +26,7 @@
                 </ul>
             </div>
         @endif
-            <form  action="" method="" class="w-50">
+            <form  action="{{ route('plans.store') }}" method="POST" class="w-50">
                 @csrf
                 <div class="mb-3">
                     <label for="nama_proyek" class="form-label">Nama Proyek</label>

@@ -22,11 +22,10 @@ class ProfileRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'first_name'=>'required',
-            'last_name'=>'required',
-            'phone_number'=>'required|max=14',
-            'gender'=>'required|in:male,female',
-            'job'=>'required',
+            'name'=>['required'],
+            'phone_number'=>['required','max=14'],
+            'gender'=>['required','in:male,female'],
+            'job'=>['required'],
         ];
     }
 }

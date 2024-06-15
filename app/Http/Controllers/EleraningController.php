@@ -3,10 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class EleraningController extends Controller
 {
     public function indexeleraning(){
+        if(!(Auth::user()->profile->premium ))
+        {
+            return redirect()->route('subscription.home')->with('error', 'You can only have one plan. Subscribe for more.');
+        }
         return view('e-learning.indexelearning');
     }
 

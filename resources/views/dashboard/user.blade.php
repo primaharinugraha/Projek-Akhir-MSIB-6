@@ -34,24 +34,25 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Nama</th>
-                            <th>Gender</th>
-                            <th>Profesi</th>
-                            <th>Umur</th>
+                            <th>Id</th>
                             <th>Email</th>
-                            <th>Alamat</th>
+                            <th>Role</th>
+                            {{-- <th>Umur</th>
+                            <th>Email</th>
+                            <th>Alamat</th> --}}
                             <th>Actions</th><!-- Add this column -->
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($allUsers as $user)
                         <tr>
-                            <td>1</td>
-                            <td>jack</td>
-                            <td>laki-laki</td>
-                            <td>usaha</td>
-                            <td>20</td>
+                            <td>{{$loop->iteration}}</td>
+                            <td>{{ $user->id }}</td>
+                            <td>{{ $user->email }}</td>
+                            <td>{{ $user->role }}</td>
+                            {{-- <td>20</td>
                             <td>apake@gmail.com</td>
-                            <td>Bandung</td>
+                            <td>Bandung</td> --}}
                             <td class="">
                               
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Update</button>
@@ -59,18 +60,18 @@
                                 <button class="btn btn-danger">Delete</button>
                             </td>
                         </tr>
-                        <!-- Add more rows as needed -->
+                        @endforeach
                     </tbody>
                     <tfoot>
                         <tr>
                             <th>No</th>
-                            <th>Nama</th>
-                            <th>Gender</th>
-                            <th>Profesi</th>
-                            <th>Umur</th>
+                            <th>Id</th>
                             <th>Email</th>
-                            <th>Alamat</th>
-                            <th>Actions</th>
+                            <th>Role</th>
+                            {{-- <th>Umur</th>
+                            <th>Email</th>
+                            <th>Alamat</th> --}}
+                            <th>Actions</th><!-- Add this column -->
                         </tr>
                     </tfoot>
                 </table>
@@ -86,28 +87,12 @@
         <form id="editForm" action="" class="p-2">
           <input type="hidden" name="id" id="edit_id">
           <div class="form-group">
-              <label for="edit_nama">Nama</label>
-              <input type="text" class="form-control" id="edit_nama" name="nama">
-          </div>
-          <div class="form-group">
-              <label for="edit_gender">Gender</label>
-              <input type="text" class="form-control" id="edit_gender" name="gender">
-          </div>
-          <div class="form-group">
-              <label for="edit_profesi">Profesi:</label>
-              <input type="text" class="form-control" id="edit_profesi" name="profesi">
-          </div>
-          <div class="form-group">
-              <label for="edit_umur" class="">Umur</label>
-              <input type="text" class="form-control" id="edit_umur" name="umur">
-          </div>
-          <div class="form-group">
-              <label for="edit_email">Email</label>
-              <input type="email" class="form-control" id="edit_email" name="email">
-          </div>
-          <div class="form-group">
-              <label for="edit_alamat">Alamat</label>
-              <input type="text" class="form-control" id="edit_alamat" name="alamat">
+            <label for="edit_role" class="">Role</label>
+            <select name="role" id="edit_role" class="form-control">
+                <option value="" disabled selected>Select Role</option>
+                <option value="member">Member</option>
+                <option value="admin">Admin</option>
+            </select>
           </div>
       </form>
       </div>

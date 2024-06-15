@@ -4,16 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Http\Requests\UserRequest;
+use App\Http\Requests\UpdateProfileRequest;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    // public function indexlogin(){
-    //     return view('auth.login');
-    // }
-
-    public function home() {
-        return view('landingpage');
+    public function home()
+    {
+        return redirect()->route('home');
     }
     public function register() {
         return view('auth.register');
@@ -43,22 +41,32 @@ class UserController extends Controller
     //     return view('profile');
     // }
 
-    public function proyek(){
-        return view('proyek.indexproyek');
-    }
-    public function create(){
-        return view('proyek.createproyek');
-    }
-    public function show(){
-        return view('proyek.showproyek');
+    public function edit(User $user)
+    {
+        return view('profiles.edit', ['profile' => $user->profile, 'user' => $user]);
     }
 
-     public function kelolauang(){
-        return view('kelolauang.indexkelolauang');
+    public function update(UpdateProfileRequest $request, User $user)
+    {
+        $data = $request->validated();
+
+        if ($data['email'] == '') {
+            unset($data['email']);
+        }
+
+        if (isset($data['photo'])) {
+            $data['photo_path'] = $data['photo']->store('media', 'public');
+        }
+
+        $user->update($data);
+        $user->profile->update($data);
+
+        return redirect()->route('profiles.edit', ['user' => $user])->with('success', 'Update successfully.');
     }
-     public function createkelolauang(){
-        return view('kelolauang.createkelolauang');
-    }
+
+
+    
+
      public function article(){
         return view('article');
     }

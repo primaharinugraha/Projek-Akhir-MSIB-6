@@ -46,7 +46,7 @@
       </button>
     </div>
    
-<section class="border-top border-bottom border-black">
+<section class="border-top border-bottom border-black" id="news">
   <div class="container-fluid">
     <div class="container mt-3 p-4">
         <div class="row" data-aos="zoom-in-up">
@@ -62,7 +62,7 @@
                    <p>SmartMoney adalah platform pengelolaan keuangan sederhana dan mudah digunakan untuk semua usia, dilengkapi berbagai fitur menarik dan nyaman digunakan.</p>
                    <div class="widget-49">
                        <div class="widget-49-meeting-action">
-                           <a href="#" class="btn btn-sm btn-flash-border-primary aksi-selanjutnya">Selengkapnya</a>
+                           <a href="#tentangkami" class="btn btn-sm btn-flash-border-primary aksi-selanjutnya">Selengkapnya</a>
                        </div>
                    </div>
                </div>
@@ -108,8 +108,7 @@
 </div>
 </div>
 </section>
-
-      <div class="contaner-fluid taglinne py-5" >
+     <div class="contaner-fluid taglinne py-5" >
         <div class="container py-5">
            <div class="row">
               <div class="col-sm-12 col-lg-8 text-center mb-2" data-aos="fade-right"
@@ -119,14 +118,14 @@
                 <h1 class="fw-bold">Mulai Hitung bersama <span style="color: #00ae86;" class=" fst-italic">SmartMoney</span></h1>
               </div>
            <div class=" col-sm-12 col-lg-4 d-flex inline-block align-items-center gap-3 justify-content-center mb-2" data-aos="zoom-in-up">
-            <a href="{{ route('login') }}" class="btn tombolhijau px-4 py-3 custom-shadow" role="button">Get Started</a>
+            <a href="{{ route('finances.index') }}" class="btn tombolhijau px-4 py-3 custom-shadow" role="button">Get Started</a>
             <a href="{{route('e-learning')}}" class="btn custom-shadow px-4 py-3 fw-bold bg-white"  role="button">Learn More</a>
             </div>
         </div>
       </div>
     </div>
     {{-- maps --}}
-    <div class="container-fluid py-5 border-top border-dark">
+    <section class="container-fluid py-5 border-top border-dark" id="maps">
       <div class="container">
         <div class="row">
           <div class="col-lg-6">
@@ -142,15 +141,15 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     {{-- tentang kami --}}
-    <div class="contaner-fluid taglinne py-5 border-top border-dark">
+    <section class="contaner-fluid taglinne py-5 border-top border-dark" id="tentangkami">
       <div class="container  p-5" style="border: 4px solid  #00ae86;  border-radius: 40px;">
         <h1 class="text-center fw-bold" data-aos="fade-right"
         data-aos-offset="220"
         data-aos-easing="ease-in-sine">Tentang <span style="color: #00ae86;" class="">Kami</span></h1>
-        <div class="mt-3 bg-dark mx-auto rounded" style="height: 3px;width: 155px"></div>
+        <div class="mt-3 bg-dark mx-auto rounded" style="height: 5px;width: 155px"></div>
           <div class="mt-3">
             <h3 class="text-center" data-aos="fade-left"
             data-aos-offset="220"
@@ -170,7 +169,7 @@
                       <p> Membantu Anda merencanakan dan mengelola keuangan masa depan dengan lebih terarah, efisien, mudah dipahami, serta memberikan hasil yang optimal</p>
                       <div class="widget-49">
                           <div class="widget-49-meeting-action">
-                              <a href="{{route('proyek')}}" class="btn btn-sm btn-flash-border-primary aksi-selanjutnya">Mulai Proyek</a>
+                              <a href="{{route('plans.index')}}" class="btn btn-sm btn-flash-border-primary aksi-selanjutnya">Mulai Proyek</a>
                           </div>
                       </div>
                   </div>
@@ -215,17 +214,27 @@
         </div>
     </div>
   </div>
-</div>
+</section>
 
-  
-  
-
-
-
-
-{{-- content end --}}
+  {{-- content end --}}
 
 @include('components.footer')
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+  $(document).ready(function() {
+      $('#searchInput').on('keypress', function(e) {
+          if (e.which === 13) { // Ketika pengguna menekan tombol Enter
+              var sectionId = $(this).val().trim(); // Ambil nilai input dan hapus spasi di awal/akhir
+              if (sectionId) {
+                  $('html, body').animate({
+                      scrollTop: $('#' + sectionId).offset().top
+                  }, 300); // Scroll ke section yang dituju dalam 1 detik
+              }
+          }
+      });
+  });
+</script>
  @endsection
  
  
