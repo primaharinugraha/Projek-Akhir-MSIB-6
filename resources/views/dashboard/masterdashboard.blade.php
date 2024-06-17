@@ -129,12 +129,6 @@
           </p>
         </a>
         <ul class="nav nav-treeview">
-          <li class="nav-item mb-3">
-            <a href="{{route('dataproyek.dashboard')}}" class="nav-link  {{ Route::currentRouteName() == 'dataproyek.dashboard' ? 'active' : '' }}">
-              <i class=" nav-icon far fa-clipboard"></i>
-              <p>Data Proyek</p>
-            </a>
-          </li>
           <li class="nav-item">
             <a href="{{route('member.dashboard')}}" class="nav-link {{ Route::currentRouteName() == 'member.dashboard' ? 'active' : '' }}">
               <i class=" nav-icon far fa-address-card"></i>
@@ -158,6 +152,7 @@
           <i class="nav-icon far fa-newspaper"></i>
           <p>
             Article
+            <span class="right badge badge-warning">{{$articleCount}}</span>
           </p>
         </a>
       </li>

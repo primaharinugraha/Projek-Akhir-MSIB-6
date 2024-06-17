@@ -64,7 +64,7 @@ class FinanceController extends Controller
         $liabilitiesByMonth = Auth::user()->finances()->year($year)->liability()->orderBy('date')
             ->select(DB::raw('sum(value) as sums'), DB::raw("DATE_FORMAT(date,'%M %Y') as months"))->groupBy('months')->get();
 
-        return view('finances.index', [
+        return view('kelolauang.indexkelolauang', [
             'assets' => Auth::user()->finances()->year($year)->asset()->get(),
             'liabilities' => Auth::user()->finances()->year($year)->liability()->get(),
             'year' => $year,
@@ -78,7 +78,7 @@ class FinanceController extends Controller
 
     public function yearMonth($year, $month)
     {
-        return view('finances.index', [
+        return view('kelolauang.indexkelolauang', [
             'assets' => Auth::user()->finances()->year($year)->month($month)->asset()->get(),
             'liabilities' => Auth::user()->finances()->year($year)->month($month)->liability()->get(),
             'year' => $year, 'month' => $month,

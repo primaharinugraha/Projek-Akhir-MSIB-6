@@ -28,8 +28,7 @@ Route::get('/', function () {
     return view('landingpage');
 })->name('home');
 
-Route::get('dashboard/user', [MainController::class, 'dashboardUser'])->middleware('auth')->name('main.dashboardUser');
-Route::get('dashboard/admin', [MainController::class, 'dashboardAdmin'])->middleware('auth')->name('main.dashboardAdmin');
+
 
 Route::get('login', [LoginController::class, 'login'])->name('login');
 Route::post('authenticate', [LoginController::class, 'authenticate'])->name('authenticate');
@@ -43,9 +42,7 @@ Route::post('register_user', [UserController::class, 'registerUser'])->name('reg
 Route::get('profile/{user}/edit', [UserController::class, 'edit'])->middleware('auth')->can('update', 'user')->name('profiles.edit');
 Route::put('profile/{user}', [UserController::class, 'update'])->middleware('auth')->can('update', 'user')->name('profiles.update');
 
-// Route::get('proyek', [UserController::class, 'proyek'])->name('proyek');
-// Route::get('proyek/show', [UserController::class, 'show'])->name('proyek.show');
-// Route::get('create/proyek', [UserController::class, 'create'])->middleware('auth')->name('create.proyek');
+
 
 
 Route::get('plans', [PlanController::class, 'index'])->middleware('auth')->name('plans.index');
@@ -68,6 +65,13 @@ Route::get('finances/year/{year}/month/{month}', [FinanceController::class, 'yea
 Route::get('finances/year/{year}/month/{month}/create', [FinanceController::class, 'create'])->middleware('auth')->name('finances.create');
 Route::get('finances/export', [FinanceController::class, 'export'])->name('finances.export');
 
+
+
+Route::post('posts', [PostController::class, 'store'])->middleware('auth')->can('create', App\Models\Post::class)->name('posts.store');
+Route::get('posts/{post}/edit', [PostController::class, 'edit'])->middleware('auth')->can('update', 'post')->name('posts.edit');
+Route::put('posts/{post}', [PostController::class, 'update'])->middleware('auth')->can('update', 'post')->name('posts.update');
+
+Route::delete('posts/{post}', [PostController::class, 'destroy'])->middleware('auth')->can('delete', 'post')->name('posts.destroy');
 
 Route::get('Article', [UserController::class, 'article'])->name('article');
 
@@ -95,6 +99,7 @@ Route::get('E-learning/advance/video5', [EleraningController::class, 'advance5']
 
 // dashboard
 Route::get('dashboard', [DashboardController::class, 'dashboard'])->middleware('auth')->name('admin.dashboard');
+Route::get('dashboarduser', [DashboardController::class, 'dashboardUser'])->middleware('auth')->name('dashboardUser');
 Route::get('dashboard/dataproyek', [DashboardController::class, 'dataproyekdashboard'])->name('dataproyek.dashboard');
 Route::get('dashboard/member', [DashboardController::class, 'memberdashboard'])->name('member.dashboard');
 Route::get('dashboard/user', [DashboardController::class, 'userdashboard'])->name('user.dashboard');

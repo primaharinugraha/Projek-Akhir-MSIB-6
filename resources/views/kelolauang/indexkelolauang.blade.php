@@ -23,7 +23,7 @@
                             <input type="string" name="month" class="datepicker-yearMonth  form-input custom-shadow  rounded ms-2" value="{{ isset($year) && isset($month) ? $year.'-'.$month : '' }}">
                         </div>
                         <div class="col-lg-6 mt-3 ">
-                            <a href="" class="btn btn-warning me-3">
+                            <a href="{{ route('finances.index') }}" class="btn btn-warning me-3">
                                 Reset
                                 <i class="fa-solid fa-hand-sparkles"></i>
                             </a>
@@ -55,7 +55,7 @@
         
     
         <h2 class="mt-5 fw-bold mb-4" style="color: #00ae86;">Asset</h2>
-        <div class="card w-25 mb-5 py-2 custom-shadow">
+        <div class="card w-25 mb-5 py-3 custom-shadow">
             @if(isset($routeYear) && !isset($routeMonth))
             <ul class="fw-bold">
                 @foreach($assetsByMonth as $finance)
@@ -101,7 +101,7 @@
                 </table>
                 <h2 class="mt-3 fw-bold" style="color: #00ae86;"> Total Asset:{{$totalAssets}}</h2>
                 <h2 class="mt-5 fw-bold mb-4" style="color: #00ae86;">Liability</h2>
-                    <div class="card card w-25 mb-5 py-2 custom-shadow">
+                    <div class="card card w-25 mb-5 py-3 custom-shadow">
                         @if(isset($routeYear) && !isset($routeMonth))
                      <ul class="fw-bold">
                         @foreach($liabilitiesByMonth as $finance)

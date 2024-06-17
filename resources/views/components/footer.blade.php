@@ -13,7 +13,7 @@
                     <p class="text-muted"><i class="fa-solid fa-phone"></i> (021) 123-4567</p>
                 </div>
             </div>
-            <div class="col-lg-4 d-flex flex-column align-items-center">
+            <div class="col-lg-4 d-flex flex-column align-items-center" id="sosmed">
                 <h5 class="text-dark mb-4 fw-bold mt-4">Ikuti Kami</h5>
                 <div class="d-flex gap-5 fs-2 text-white justify-content-center">
                     <a href="https://www.facebook.com/share/2CdqRc8yNXUcXhzb/?mibextid=qi2Omg" target="_blank" class="ikutikami icon-container custom-shadow">

@@ -1,5 +1,5 @@
 @extends('dashboard.masterdashboard')
-@section('title', 'index')
+@section('title', 'dashboaruser')
     
 
 
@@ -14,7 +14,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Index</a></li>
+              <li class="breadcrumb-item"><a href="{{route('user.dashboard')}}">Index</a></li>
               <li class="breadcrumb-item active">Dashboard</li>
             </ol>
           </div><!-- /.col -->
@@ -28,48 +28,21 @@
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-          @if(Auth::user()->role == 'admin')
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-              <div class="inner">
-                <h3>{{$berlanggananCount}}</h3>
-                <p>Berlangganan</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-email-unread"></i>
-              </div>
-              <a href="{{route('member.dashboard')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
           <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-warning">
+            <div class="small-box bg-secondary">
               <div class="inner">
-                <h3>{{ $usersCount }}</h3>
-                <p>User Registrations</p>
+                <h3>{{ $plansCount }}<sup style="font-size: 20px"></sup></h3>
+                <p>Data Proyek</p>
               </div>
               <div class="icon">
-                <i class="ion ion-person-add"></i>
+                <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="{{route('user.dashboard')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{{route('dataproyek.dashboard')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-primary">
-              <div class="inner">
-                <h3>{{$articleCount}}</h3>
-                <p>Article</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-ios-paper"></i>
-              </div>
-              <a href="{{route('article.dashboard')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
+        
           <div class="col-lg-3 col-6">
             <!-- small box -->
             <div class="small-box bg-danger">
@@ -196,23 +169,6 @@
             </div>
         </div>
         
-          @else
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-success">
-              <div class="inner">
-                <h3>{{ $plansCount }}<sup style="font-size: 20px"></sup></h3>
-                <p>Data Proyek</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-stats-bars"></i>
-              </div>
-              <a href="{{route('dataproyek.dashboard')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          
-          @endif
-          <!-- ./col -->
         </div>
         <!-- /.row -->
         <!-- Main row -->

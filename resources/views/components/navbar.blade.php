@@ -57,7 +57,15 @@
                       {{ __('Logout') }}
                   </a>
               </li>
-              <li><a class="dropdown-item" href="{{route('admin.dashboard')}}">Dashboard</a></li>
+              @if(Auth::user()->role == 'admin')
+              <li>
+                <a class="dropdown-item" href="{{ route('admin.dashboard') }}">Dashboard</a>
+              </li>
+            @else
+              <li>
+                <a class="dropdown-item" href="{{ route('dashboardUser') }}">DashboardUser</a>
+              </li>
+            @endif
       </div>
       <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
           @csrf

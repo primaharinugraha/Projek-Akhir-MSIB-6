@@ -20,9 +20,21 @@
    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous" defer></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-    <script>
-        AOS.init();
-    </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+      AOS.init();
+  $(document).ready(function() {
+      $('#searchInput').on('keypress', function(e) {
+          if (e.which === 13) { // Ketika pengguna menekan tombol Enter
+              var sectionId = $(this).val().trim(); // Ambil nilai input dan hapus spasi di awal/akhir
+              if (sectionId) {
+                  $('html, body').animate({
+                      scrollTop: $('#' + sectionId).offset().top
+                  }, 300); // Scroll ke section yang dituju dalam 1 detik
+              }
+          }
+      });
+  });
+</script>
 </body>
 </html>

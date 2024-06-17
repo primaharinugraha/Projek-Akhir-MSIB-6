@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use App\Models\User;
+use Illuminate\Http\Request;
 use App\Http\Requests\UserRequest;
 use App\Http\Requests\UpdateProfileRequest;
-use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -37,9 +38,7 @@ class UserController extends Controller
         // Redirect ke halaman login
         return redirect('login');
     }
-    // public function profile(){
-    //     return view('profile');
-    // }
+  
 
     public function edit(User $user)
     {
@@ -68,7 +67,8 @@ class UserController extends Controller
     
 
      public function article(){
-        return view('article');
+        $posts = Post::all();
+        return view('article',compact('posts'));
     }
      
     }

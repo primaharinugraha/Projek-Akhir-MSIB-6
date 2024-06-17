@@ -2,7 +2,6 @@
 @section('title', 'Article')
 
 @section('content')
-
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -38,23 +37,75 @@
                             <th>image</th>
                             <th>judul</th>
                             <th>content</th>
-                            <th>tanggal</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($posts as $post)
                         <tr>
-                            <td>1</td>
-                            <td> <img src="https://cdn.cnbcindonesia.com/cnbc/images/default.jpg" alt="" class="img-fluid  rounded" style="width: 70px; height:40px;"></td>
-                            <td>apake</td>
-                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, error!</td>
-                            <td>20 agustus 2024</td>
-                            <td class="">
-                              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Update</button>
-                              </a>
-                                <button class="btn btn-danger">Delete</button>
+                            <td>{{ $loop->iteration }}</td>
+                            <td><img src="{{ Storage::url($post->image_path) }}" alt="" class="img-fluid rounded" style="width: 70px; height:40px;"></td>
+                            <td>{{ $post->title }}</td>
+                            <td>{{ $post->text }}</td>
+                            <td>
+                               <div class="d-flex ">
+                                 <!-- Tombol Edit -->
+                                 <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editModal-{{ $post->id }}">Edit</button>
+                                
+                                 <form action="{{ route('posts.destroy', $post->id) }}" method="POST" style="display:inline;">
+                                     @csrf
+                                     @method('DELETE')
+                                     <button type="submit" class="btn btn-danger">
+                                         Delete
+                                     </button>
+                                 </form>
+                               </div>
                             </td>
                         </tr>
+
+                        <!-- Edit Modal -->
+                        <div class="modal fade" id="editModal-{{ $post->id }}" tabindex="-1" aria-labelledby="editModalLabel-{{ $post->id }}" aria-hidden="true">
+                            <div class="modal-dialog">
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="editModalLabel-{{ $post->id }}">Edit Article</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form id="editForm-{{ $post->id }}" action="{{ route('posts.update', $post->id) }}" method="POST" enctype="multipart/form-data" class="p-2">
+                                            @csrf
+                                            @method('PUT')
+                                            <div class="form-group">
+                                                <label for="title">Title</label>
+                                                <input type="text" class="form-control" name="title" id="title" value="{{ $post->title }}">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="edit_image-{{ $post->id }}">Image</label>
+                                                <input type="file" class="form-control" id="edit_image-{{ $post->id }}" name="image">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="edit_content-{{ $post->id }}">Content</label>
+                                                <textarea class="form-control" name="text" id="edit_content-{{ $post->id }}">{{ $post->text }}</textarea>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary">Update</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
                     </tbody>
                     <tfoot>
                         <tr>
@@ -62,78 +113,55 @@
                             <th>image</th>
                             <th>judul</th>
                             <th>content</th>
-                            <th>tanggal</th>
                             <th>Actions</th>
                         </tr>
                     </tfoot>
                 </table>
- {{-- modal edit article --}}
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Edit Article</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form id="editForm" action="" enctype="" class="p-2">
-          <input type="hidden" name="id" id="edit_id">
-          <div class="form-group">
-              <label for="edit_image">Image</label>
-              <input type="file" class="form-control" id="edit_image" name="image">
-          </div>
-          <div class="form-group">
-              <label for="edit_content">content</label>
-              <input type="text" class="form-control" id="edit_content" name="content">
-          </div>
-          <div class="form-group">
-              <label for="edit_profesi">Tanggal</label>
-              <input type="date" class="form-control" id="edit_profesi" name="profesi">
-          </div>
-      </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-{{-- modal create Article --}}
- <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="createModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="createModalLabel">Create Article</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form id="createForm" action="" enctype="" class="p-2">
-                    <div class="form-group">
-                        <label for="create_image">Image</label>
-                        <input type="file" class="form-control" id="create_image" name="image">
+
+                {{-- modal create Article --}}
+                <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="createModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="createModalLabel">Create Article</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="createForm" action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data" class="p-2">
+                                    @csrf
+                                    <div class="form-group">
+                                        <label for="title">Title</label>
+                                        <input type="text" class="form-control" name="title" id="title" value="{{ old('title') }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="create_image">Image</label>
+                                        <input type="file" class="form-control" id="create_image" name="image">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="create_content">Content</label>
+                                        <textarea class="form-control" name="text" id="text">{{ old('text') }}</textarea>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary">Create</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="create_content">Content</label>
-                        <input type="text" class="form-control" id="create_content" name="content">
-                    </div>
-                    <div class="form-group">
-                        <label for="create_tanggal">Tanggal</label>
-                        <input type="date" class="form-control" id="create_tanggal" name="tanggal">
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Create</button>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-</div>
-   </div>
- </section>
+    </section>
     <!-- /.content -->
 </div>
-
 @endsection
